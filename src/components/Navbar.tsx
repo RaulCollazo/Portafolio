@@ -1,10 +1,27 @@
+import { useState, useEffect } from "react";
 function Navbar() {
   const elemento: string = "<DEV>";
+  const [isScrolled, setIsScrolled] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
-    <nav className="navbar navbar-expand-lg color-fondo">
-      <div className="container-fluid">
+    <nav
+      className={`navbar navbar-expand-lg ${isScrolled ? "navbar-scrolled" : "color-fondo"}`}
+    >
+      <div className="container-fluid ">
         <a className="navbar-brand" href="#"></a>
-        {elemento}
+        <span className="texto-azul" style={{ marginRight: "auto" }}>
+          {elemento}
+        </span>
         <button
           className="navbar-toggler"
           type="button"
@@ -18,12 +35,12 @@ function Navbar() {
         </button>
         <div className="collapse navbar-collapse" id="navbarScroll">
           <ul
-            className="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
+            className="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll"
             style={{ "--bs-scroll-height": "100px" } as React.CSSProperties}
           >
             <li className="nav-item">
               <a
-                className="nav-link active texto-azul"
+                className="nav-link active texto-gris"
                 aria-current="page"
                 href="#"
               >
@@ -32,14 +49,14 @@ function Navbar() {
             </li>
 
             <li className="nav-item">
-              <a className="nav-link texto-azul" href="#">
+              <a className="nav-link texto-gris" href="#">
                 Skills
               </a>
             </li>
 
             <li className="nav-item dropdown">
               <a
-                className="nav-link dropdown-toggle texto-azul"
+                className="nav-link dropdown-toggle texto-gris"
                 href="#"
                 role="button"
                 data-bs-toggle="dropdown"

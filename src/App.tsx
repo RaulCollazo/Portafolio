@@ -1,8 +1,15 @@
 import Navbar from "./components/Navbar";
+import TypeWrite from "./components/typeWrite";
+import "./App.css";
 function App() {
   return (
     <>
-      <Navbar /> <h1>Hola Bauti</h1>
+      <Navbar />
+      <span>
+        <h1 className="titulo-desplazado titulo-arriba">RAUL</h1>
+        <h1 className="titulo-desplazado">COLLAZO</h1>
+        <TypeWrite />
+      </span>
     </>
   );
 }
