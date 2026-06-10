@@ -1,6 +1,6 @@
 #root {
   margin: 0;
-  padding: 0 2rem; /* ← Solo horizontal */
+  padding: 0 clamp(1rem, 5vw, 2rem); /* ← Responsive */
   background-color: #080b10 !important;
   min-height: 100vh;
 }
@@ -41,28 +41,98 @@
   color: #888;
 }
 
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: clamp(40px, 10vh, 68px);
+}
+
 .titulo-desplazado {
-  text-align: center;
+  text-align: left;
   color: white;
   font-family: "Inter", sans-serif;
   font-weight: 700;
-  font-size: 120px;
-  transform: translateX(-80px); /* ← Desplaza 80px a la izquierda */
+  font-size: clamp(2.5rem, 12vw, 120px);
+  margin-top: clamp(15px, 5vh, 30px);
+  margin-left: clamp(1rem, 5vw, 30px);
+  line-height: 0.9;
+  letter-spacing: -2px;
+  transform: none;
 }
 
 .titulo-arriba {
-  transform: translateX(-200px) translateY(40px);
+  margin-bottom: -15px;
 }
 
-.titulo-abajo {
-  transform: translateX(-200px) translateY(40px);
-  font-weight: 700;
-  font-size: 50px;
-  transform: translateX(-45px) translateY(-20px);
+.typewrite-container {
+  font-size: clamp(0.9rem, 2vw, 1.2em);
+  display: block;
+  font-family: "Courier New", monospace;
+  color: #00ff00;
+  text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+  margin-top: clamp(8px, 3vh, 10px);
+  margin-left: clamp(1rem, 5vw, 30px);
+  line-height: 1.4;
+  word-wrap: break-word;
 }
 
-@media (max-width: 768px) {
+/* Tablets */
+@media (max-width: 1024px) {
   .titulo-desplazado {
-    margin-left: 20px; /* Menos desplazamiento en móvil */
+    font-size: clamp(2rem, 10vw, 90px);
+  }
+}
+
+/* Tablets pequeñas y móviles */
+@media (max-width: 768px) {
+  .hero-container {
+    margin-top: clamp(30px, 8vh, 50px);
+  }
+
+  .titulo-desplazado {
+    font-size: clamp(2rem, 9vw, 70px);
+    margin-top: clamp(10px, 4vh, 25px);
+    margin-left: clamp(0.75rem, 4vw, 20px);
+  }
+
+  .titulo-arriba {
+    margin-bottom: -10px;
+  }
+
+  .typewrite-container {
+    font-size: clamp(0.8rem, 1.8vw, 1rem);
+    margin-left: clamp(0.75rem, 4vw, 20px);
+  }
+}
+
+/* Móviles medianos */
+@media (max-width: 480px) {
+  .hero-container {
+    margin-top: clamp(25px, 6vh, 40px);
+  }
+
+  .titulo-desplazado {
+    font-size: clamp(1.8rem, 7vw, 50px);
+    margin-top: clamp(8px, 3vh, 20px);
+    margin-left: clamp(0.5rem, 3vw, 15px);
+  }
+
+  .typewrite-container {
+    font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+    margin-left: clamp(0.5rem, 3vw, 15px);
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 320px) {
+  .titulo-desplazado {
+    font-size: clamp(1.5rem, 6vw, 40px);
+    margin-left: clamp(0.5rem, 2.5vw, 12px);
+  }
+
+  .typewrite-container {
+    font-size: clamp(0.7rem, 1.2vw, 0.8rem);
+    margin-left: clamp(0.5rem, 2.5vw, 12px);
   }
 }

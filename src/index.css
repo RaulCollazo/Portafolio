@@ -83,12 +83,3 @@ button:focus-visible {
   text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
   transition: color 0.3s ease;
 }
-
-.typewrite-container {
-  font-size: 2em;
-  display: inline-block;
-  font-family: "Courier New", monospace;
-  color: #00ff00;
-  text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
-  transform: translateX(560px) translateY(-20px);
-}

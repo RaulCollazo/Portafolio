@@ -44,13 +44,13 @@ function Navbar() {
                 aria-current="page"
                 href="#"
               >
-                About
+                Proyectos
               </a>
             </li>
 
             <li className="nav-item">
               <a className="nav-link texto-gris" href="#">
-                Skills
+                Tecnologías
               </a>
             </li>
 
@@ -62,19 +62,19 @@ function Navbar() {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Link
+                Sobre mí
               </a>
 
               <ul className="dropdown-menu">
                 <li>
                   <a className="dropdown-item" href="#">
-                    Projects
+                    Linkedin
                   </a>
                 </li>
 
                 <li>
                   <a className="dropdown-item" href="#">
-                    Another action
+                    GitHub
                   </a>
                 </li>
 
@@ -84,7 +84,7 @@ function Navbar() {
 
                 <li>
                   <a className="dropdown-item" href="#">
-                    Something else here
+                    Contacto
                   </a>
                 </li>
               </ul>
